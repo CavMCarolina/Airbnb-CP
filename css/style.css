@@ -27,14 +27,214 @@
     font-size: var(--pequeno-medio);
 }
 
+h1 {
+    font-size: var(--muito_grande);
+}
+
+h2 {
+    font-size: var(--grande);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: var(--medio);
+    font-weight: 600;
+}
+
+li {
+    list-style: none;
+}
+
 .flex {
     display: flex;
+}
+
+.alinhar {
+    align-items: center;
+}
+
+.espaco {
+    justify-content: space-between;
+}
+
+.baseline {
+    align-items: baseline;
 }
 
 .li-titulo {
     font-weight: 600;
 }
 
+a {
+    font-weight: 600;
+    color: var(--padrao);
+}
+
+.botao {
+    background-color: transparent;
+    border: 0;
+}
+
+.foto-redonda {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 20px;
+    object-fit: cover;
+    margin-right: 1rem;
+}
+
+#esquerda {
+    width: 58%;
+}
+
+#direita {
+    width: 33%;
+}
+
+/* Nav */
+nav a {
+    text-decoration: none;
+}
+
+/* Zona Nobre ~> título + imagens */
+#titulo {
+    margin-top: 1.5rem;
+}
+
+#titulo button {
+    margin-left: 15px;
+}
+
+#titulo a {
+    margin-left: 7px;
+}
+
+#imagens {
+    display: grid;
+    grid-template-rows: repeat(2, 180px);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+#imagens img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#imagem_principal {
+    grid-row: 1 / 3;
+    grid-column: 1 / 3;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+#img3 {
+    border-top-right-radius: 15px;
+}
+
+#img5 {
+    border-bottom-right-radius: 15px;
+}
+
+/* Reservar para Desktop*/
+#reservar {
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    padding: 24px;
+    box-sizing: border-box;
+    max-width: 400px;
+    max-width: 500px;
+    margin-top: 21px;
+}
+
+.noite {
+    margin-left: 3px;
+}
+
+#check-in {
+    margin-top: 20px;
+    border: 1px solid #717171;
+    border-radius: 7px;
+}
+
+.titulos-reservar {
+    font-family: inherit;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 600;
+    margin-bottom: 1px;
+}
+
+.datas {
+    padding: 10px;
+    width: 50%;
+}
+
+#checkout {
+    border-left: 1px solid #717171;
+}
+
+#hospede {
+    border-top: 1px solid #717171;
+    padding: 10px;
+}
+
+.reservar_button {
+    background-color: #ff385c;
+    color: white;
+    font-size: 16px;
+    border: 0;
+    border-radius: 7px;
+    padding: 1.3rem 1rem;
+}
+
+#aviso {
+    justify-content: center;
+}
+
+.precos {
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+#reservar hr {
+    margin-top: 20px;
+}
+
+/* Notificação embaixo da reserva */
+#preco {
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 2rem;
+    max-width: 450px;
+}
+
+#preco p {
+    color: #717171;
+    margin-top: 3px;
+}
+
+#preco svg {
+    min-width: 32px;
+    min-height: 32px;
+    margin-right: 17px;
+}    
+
+
+/* Regras */
+#regras {
+    margin-top: 1rem;
+}
+
+#regras ul {
+    max-width: 230px;
+}
+
+/* Footer */
 footer {
     width: 100%;
     border-top: 1px solid var(--cinza_claro);
@@ -42,13 +242,13 @@ footer {
 }
 
 footer li {
-    list-style: none;
     padding: 7px;
 }
 
 footer a {
     text-decoration: none;
     color: var(--padrao);
+    font-weight: inherit;
 }
 
 footer a:hover {
@@ -58,6 +258,19 @@ footer a:hover {
 /* Media Query ~> Responsividade */
 /* Desktop */
 @media screen and (min-width: 1024px) {
+    .margin {
+        margin: 0 10%;
+    }
+
+    /* Reservar */
+    #reservar_menor {
+        display: none;
+    }
+
+    .reservar_button {
+        width: 100%;
+        margin: 15px auto;
+    }
 
     /* Footer */
     footer div {
@@ -69,6 +282,9 @@ footer a:hover {
 
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+    .margin {
+        margin: 0 5%;
+    }
 
     /* Footer */
     footer ul {
@@ -80,6 +296,30 @@ footer a:hover {
 
 /* Mobile */
 @media screen and (max-width: 767px) {
+    .margin {
+        margin: 0 3%;
+    }
+
+    /* Reservar para Mobile */
+    #direita {
+        display: none;
+    }
+
+    #reservar_menor {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        background-color: var(--branco);
+        width: 100%;
+        border-top: 1px solid var(--cinza_claro);
+        padding: 15px;
+    }
+
+    #reservar_menor span {
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
     /* Footer */
     footer ul {
         border-bottom: 1px solid var(--cinza_claro);
