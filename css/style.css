@@ -83,12 +83,9 @@ a {
     margin-right: 1rem;
 }
 
-#esquerda {
-    width: 58%;
-}
-
-#direita {
-    width: 33%;
+.bolinha::before {
+    content: "•";
+    margin: 0 4px;
 }
 
 /* Nav */
@@ -262,6 +259,15 @@ footer a:hover {
         margin: 0 10%;
     }
 
+    #esquerda {
+        width: 58%;
+        margin-top: 21px;
+    }
+    
+    #direita {
+        width: 33%;
+    }
+
     /* Reservar */
     #reservar_menor {
         display: none;
@@ -282,8 +288,34 @@ footer a:hover {
 
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+    #texto_logo {
+        display: none;
+    }
+
     .margin {
         margin: 0 5%;
+    }
+
+    #esquerda {
+        width: 58%;
+        margin-top: 21px;
+    }
+    
+    #direita {
+        width: 33%;
+    }
+
+    #reservar_menor {
+        display: none;
+    }
+
+    .reservar_button {
+        width: 100%;
+        margin: 15px auto;
+    }
+
+    #avaliacao, #oferece {
+        flex-direction: column;
     }
 
     /* Footer */
@@ -296,15 +328,22 @@ footer a:hover {
 
 /* Mobile */
 @media screen and (max-width: 767px) {
+    #texto_logo {
+        display: none;
+    }
+
     .margin {
         margin: 0 3%;
     }
 
-    /* Reservar para Mobile */
-    #direita {
-        display: none;
+    #avaliacao, #regras, #oferece {
+        flex-direction: column;
     }
 
+    .mobile_none, #direita {
+        display: none;
+    }
+    
     #reservar_menor {
         position: fixed;
         bottom: 0;
