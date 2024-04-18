@@ -61,8 +61,12 @@ li {
     align-items: baseline;
 }
 
-.li-titulo {
+.bold {
     font-weight: 600;
+}
+
+.cinza {
+    color: var(--cinza);
 }
 
 a {
@@ -73,6 +77,10 @@ a {
 .botao {
     background-color: transparent;
     border: 0;
+}
+
+.espacamento_divs {
+    margin: 2rem 0;
 }
 
 .foto-redonda {
@@ -135,11 +143,80 @@ nav a {
     border-bottom-right-radius: 15px;
 }
 
-/* Reservar para Desktop*/
+/* Descrição */
+#descricao {
+    margin-bottom: 15px;
+}
+
+#descricao ul {
+    margin-top: 5px;
+}
+
+#descricao ul svg {
+    margin-right: 5px;
+}
+
+/* Beneficios */
+.beneficio {
+    margin-bottom: 1.5rem;
+}
+
+.beneficio:last-child {
+    margin-bottom: 0;
+}
+
+.beneficio svg {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+} 
+
+#comodidades {
+    background-color: transparent;
+    border: 1px solid var(--preto);
+    border-radius: 8px;
+    width: 300px;
+    padding: 13px;
+}
+
+/* Onde vai dormir */
+#quarto {
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+/* O que oferece */
+#oferece {
+    margin-bottom: 2rem;
+}
+
+#oferece svg{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+#oferece ul {
+    margin-top: 1rem;
+}
+
+#oferece li {
+    padding: 8px 0;
+}
+
+#oferece ul li:last-child {
+    text-decoration: line-through;
+}
+
+.mostrar_mais {
+    margin-right: 8px;
+}
+
+/* Reservar para Desktop e Tablet*/
 #reservar {
-    border: 1px solid rgb(221, 221, 221);
+    border: 1px solid var(--cinza_claro);
     border-radius: 12px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    box-shadow: var(--sombra);
     padding: 24px;
     box-sizing: border-box;
     max-width: 400px;
@@ -153,7 +230,7 @@ nav a {
 
 #check-in {
     margin-top: 20px;
-    border: 1px solid #717171;
+    border: 1px solid var(--cinza);
     border-radius: 7px;
 }
 
@@ -171,18 +248,18 @@ nav a {
 }
 
 #checkout {
-    border-left: 1px solid #717171;
+    border-left: 1px solid var(--cinza);
 }
 
 #hospede {
-    border-top: 1px solid #717171;
+    border-top: 1px solid var(--cinza);
     padding: 10px;
 }
 
 .reservar_button {
-    background-color: #ff385c;
-    color: white;
-    font-size: 16px;
+    background-color: var(--principal);
+    color: var(--branco);
+    font-size: var(--medio);
     border: 0;
     border-radius: 7px;
     padding: 1.3rem 1rem;
@@ -193,7 +270,7 @@ nav a {
 }
 
 .precos {
-    font-size: 16px;
+    font-size: var(--medio);
     margin-top: 15px;
 }
 
@@ -203,7 +280,7 @@ nav a {
 
 /* Notificação embaixo da reserva */
 #preco {
-    border: 1px solid rgb(221, 221, 221);
+    border: 1px solid var(--cinza_claro);
     border-radius: 12px;
     padding: 24px;
     margin-top: 2rem;
@@ -211,7 +288,6 @@ nav a {
 }
 
 #preco p {
-    color: #717171;
     margin-top: 3px;
 }
 
@@ -219,8 +295,12 @@ nav a {
     min-width: 32px;
     min-height: 32px;
     margin-right: 17px;
-}    
+}
 
+/* Notas */
+/* .nota {
+
+} */
 
 /* Regras */
 #regras {
@@ -229,6 +309,10 @@ nav a {
 
 #regras ul {
     max-width: 230px;
+}
+
+#regras li {
+    padding: 5px;
 }
 
 /* Footer */
@@ -278,6 +362,37 @@ footer a:hover {
         margin: 15px auto;
     }
 
+    /* Beneficios */
+    .beneficio div {
+        max-width: 430px;
+    }
+
+    /* Quarto */
+    #quarto {
+        width: 350px;
+    }
+
+    /* Oferece */
+    #oferece ul {
+        min-width: 300px;
+        max-width: 320px;
+        margin-right: 20px;
+    }
+
+    /* Avaliação */
+    .avaliacao {
+        max-width: 350px;
+    }
+
+    #avaliacoes {
+        justify-content: space-around;
+    }
+    
+    /* Regras */
+    #regras {
+        margin-right: 3rem;
+    }
+
     /* Footer */
     footer div {
         display: flex;
@@ -314,9 +429,35 @@ footer a:hover {
         margin: 15px auto;
     }
 
-    #avaliacao, #oferece {
+    /* Elementos que irão para coluna */
+    #avaliacoes, #oferece {
         flex-direction: column;
     }
+
+    /* Benefícios */
+    .beneficio div{
+        max-width: 300px;
+    }
+    
+    /* Quarto */
+    #quarto {
+        width: 300px;
+    }
+
+    /* Oferece */
+    #oferece ul {
+        max-width: 340px;
+    }
+
+    #oferece ul:last-child {
+        margin-top: 4px;
+    }
+
+    /* Avaliação */
+    .avaliacao:last-child {
+        margin-top: 2.5rem;
+    }
+
 
     /* Footer */
     footer ul {
@@ -336,14 +477,18 @@ footer a:hover {
         margin: 0 3%;
     }
 
-    #avaliacao, #regras, #oferece {
+    #avaliacoes, #regras, #oferece {
         flex-direction: column;
     }
 
     .mobile_none, #direita {
         display: none;
     }
-    
+
+    .mobile_show {
+        display: block;
+    }
+
     #reservar_menor {
         position: fixed;
         bottom: 0;
@@ -359,10 +504,63 @@ footer a:hover {
         text-decoration: underline;
     }
 
+    .reservar_button {
+        padding: 1rem 4rem;
+        margin-right: 2rem;
+    }
+
+    /* Benefícios */
+    .beneficio div{
+        max-width: 240px;
+    }
+
+    /* Oferece */
+    #oferece ul {
+        max-width: 300px;
+    }
+
+    #oferece ul:last-child {
+        margin-top: 4px;
+    }
+    
+    /* Quarto */
+    #quarto {
+        width: 250px;
+    }
+
+    /* Avaliação */
+    .avaliacao:last-child {
+        margin-top: 2.5rem;
+    }
+
+    .avaliacao li {
+        font-size: var(--pequeno);
+    }
+
+    /* Regras */
+    #regras ul {
+        margin-top: 2rem;
+    }
+
+    #regras ul:first-child {
+        margin-top: 0;
+    }
+
     /* Footer */
     footer ul {
         border-bottom: 1px solid var(--cinza_claro);
         margin: 0 2rem;
         padding: 1rem 0;
+    }
+
+    footer {
+        margin-bottom: 5rem;
+    }
+}
+
+/* Media Query extra para não ficar tão estranho em tela grande */
+@media screen and (min-width: 1700px) {
+    .margin {
+        margin: 0 20%;
     }
 }
