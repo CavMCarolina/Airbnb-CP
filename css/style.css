@@ -17,7 +17,8 @@
     --cinza_claro: rgb(221, 221, 221);
 
     /* Outros */
-    --sombra: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    --sombra_botoes: ;
+    --sombra_reserva: rgba(0, 0, 0, 0.12) 0px 6px 16px;
 }
 
 * {
@@ -74,7 +75,7 @@ a {
     color: var(--padrao);
 }
 
-.botao {
+.transparente {
     background-color: transparent;
     border: 0;
 }
@@ -96,9 +97,50 @@ a {
     margin: 0 4px;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 /* Nav */
+nav {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--cinza_claro);
+}
+
 nav a {
     text-decoration: none;
+}
+
+#lupa-pesquisa {
+    background-color: #ff385c;
+    padding: 9px;
+    border-radius: 20px;
+    margin-left: 15px;
+}
+
+.botao {
+    border: 1px solid var(--cinza_claro);
+    border-radius: 20px;
+    padding:  5px 13px;
+    box-shadow: var(--sombra);
+}
+
+.busca {
+    border-right: 1px solid var(--cinza);
+    padding: 0 13px;
+}
+
+.busca:last-child {
+    border: 0;
+    padding-right: 0;
+}
+
+.busca:first-child {
+    padding-left: 5px;
+}
+
+#perfil {
+    gap: 8px;
 }
 
 /* Zona Nobre ~> título + imagens */
@@ -112,35 +154,6 @@ nav a {
 
 #titulo a {
     margin-left: 7px;
-}
-
-#imagens {
-    display: grid;
-    grid-template-rows: repeat(2, 180px);
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-top: 30px;
-    gap: 10px;
-}
-
-#imagens img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-#imagem_principal {
-    grid-row: 1 / 3;
-    grid-column: 1 / 3;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
-
-#img3 {
-    border-top-right-radius: 15px;
-}
-
-#img5 {
-    border-bottom-right-radius: 15px;
 }
 
 /* Descrição */
@@ -177,7 +190,9 @@ nav a {
     border-radius: 8px;
     width: 300px;
     padding: 13px;
+    font-weight: 600;
 }
+
 
 /* Onde vai dormir */
 #quarto {
@@ -254,6 +269,10 @@ nav a {
 #hospede {
     border-top: 1px solid var(--cinza);
     padding: 10px;
+}
+
+#check-in, #checkout, #hospede:hover {
+    cursor: pointer;
 }
 
 .reservar_button {
@@ -343,6 +362,14 @@ footer a:hover {
         margin: 0 10%;
     }
 
+    #logo {
+        flex-grow: 1;
+    }
+
+    #nav {
+        gap: 25px;
+    }
+
     #esquerda {
         width: 58%;
         margin-top: 21px;
@@ -350,6 +377,39 @@ footer a:hover {
     
     #direita {
         width: 33%;
+    }
+
+    #imagens {
+        display: grid;
+        grid-template-rows: repeat(2, 180px);
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-top: 30px;
+        gap: 10px;
+    }
+    
+    #imagens img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    #imagem_principal {
+        grid-row: 1 / 3;
+        grid-column: 1 / 3;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    
+    #img3 {
+        border-top-right-radius: 15px;
+    }
+    
+    #img5 {
+        border-bottom-right-radius: 15px;
+    }
+
+    #titulo_mobile {
+        display: none;
     }
 
     /* Reservar */
@@ -409,6 +469,47 @@ footer a:hover {
 
     .margin {
         margin: 0 5%;
+    }
+
+    #nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: var(--pequeno);
+    }
+    
+    #imagens {
+        display: grid;
+        grid-template-rows: repeat(2, 180px);
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-top: 30px;
+        gap: 10px;
+    }
+    
+    #imagens img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    #imagem_principal {
+        grid-row: 1 / 3;
+        grid-column: 1 / 3;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    
+    #img3 {
+        border-top-right-radius: 15px;
+    }
+    
+    #img5 {
+        border-bottom-right-radius: 15px;
+    }
+
+    #titulo_mobile {
+        display: none;
     }
 
     #esquerda {
@@ -481,12 +582,41 @@ footer a:hover {
         flex-direction: column;
     }
 
-    .mobile_none, #direita {
+    .mobile_none, #direita, #img2, #img3, #img4, #img5, nav {
         display: none;
     }
 
     .mobile_show {
         display: block;
+    }
+
+    #superior_mobile {
+        padding: 20px 7%;
+        border-bottom: 1px solid var(--cinza);
+        margin-bottom: 5px;
+    }
+
+    .acomodacoes {
+        gap: 5px;
+    }
+
+    .gap {
+        gap: 20px;
+    }
+
+    #imagem_principal {
+        border-radius: 10px;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    #titulo_mobile {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    #descricao h2 {
+        font-size: var(--medio);
     }
 
     #reservar_menor {
