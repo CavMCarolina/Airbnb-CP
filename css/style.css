@@ -120,8 +120,8 @@ nav a {
 
 .botao {
     border: 1px solid var(--cinza_claro);
-    border-radius: 20px;
-    padding:  5px 13px;
+    border-radius: 30px;
+    padding: 5px 13px;
     box-shadow: var(--sombra);
 }
 
@@ -362,8 +362,17 @@ footer a:hover {
         margin: 0 10%;
     }
 
+    #superior_mobile {
+        display: none;
+    }
+
     #logo {
         flex-grow: 1;
+    }
+
+    #logo svg {
+        width: 102px;
+        height: 32px;
     }
 
     #nav {
@@ -465,6 +474,15 @@ footer a:hover {
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     #texto_logo {
         display: none;
+    }
+
+    #superior_mobile {
+        display: none;
+    }
+
+    #logo svg {
+        width: 32px;
+        height: 32px;
     }
 
     .margin {
